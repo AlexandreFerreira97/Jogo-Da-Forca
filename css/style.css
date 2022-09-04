@@ -36,7 +36,7 @@ body{
     flex-direction: row;
     align-items: center;
     font-size: 1rem;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .letters{
@@ -50,7 +50,7 @@ body{
 }
 
 #keyboard{
-    margin: 30px;
+    margin: 10px;
 }
 
 .keys button{
@@ -71,7 +71,8 @@ body{
 }
 
 #category{
-    margin-top: 15px;
+    margin-top: 2px;
+    margin-bottom:2px;
     color: #8b008b;
     font-size: 1.2rem;
 }
@@ -83,7 +84,7 @@ body{
     }
 
     .letters{
-
+        width: 18px;
     }
 
     #word{
@@ -91,6 +92,45 @@ body{
     }
 
     #category{
-        font-size: 1.2rem;
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width:426px){
+    .keys button{
+        width: 36px;
+        height: 36px;
+    }
+
+    .letters{
+        width: 20px;
+    }
+
+    #word{
+        font-size: 1.5rem;
+    }
+
+    #category{
+        font-size: 1.6rem;
+    }
+}
+
+@media (min-width:769px){
+    .keys button{
+        width: 68px;
+        height: 68px;
+        font-size: 2rem;
+    }
+
+    .letters{
+        width: 35px;
+    }
+
+    #word{
+        font-size: 2.5rem;
+    }
+
+    #category{
+        font-size: 2rem;
     }
 }
