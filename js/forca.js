@@ -1,3 +1,4 @@
+let dinamicList = [];
 let secretWordCategory;
 let secretWordDrawn;
 
@@ -263,6 +264,16 @@ const wordOnScreen = () => {
     categoria.innerHTML = secretWordCategory;
     const palavra = document.getElementById("word");
     palavra.innerHTML = "";
+
+    for(i = 0; i < secretWordDrawn.length;i++){
+        if(dinamicList[i] === undefined){
+            dinamicList[i] = "&nbsp";
+            palavra.innerHTML = palavra.innerHTML +  '<div class="letters">' + dinamicList[i] + '</div>';
+        }
+        else{
+            palavra.innerHTML = palavra.innerHTML +  '<div class="letters">' + dinamicList[i] + '</div>';
+        }
+    }
 }
 
 wordOnScreen();
