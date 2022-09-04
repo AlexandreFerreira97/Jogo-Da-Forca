@@ -6,3 +6,26 @@
     box-sizing: border-box;
     font-family: 'Press Start 2P', cursive;
 }
+
+body{
+    overflow: hidden;
+    margin-top: 10px;
+    width: 100vw;
+    height: 90vh;
+    background-color: goldenrod;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+#image{
+    background-image: url('../imgs/forca.png');
+    width: 234px;
+    height: 272px;
+    background-repeat: no-repeat;
+}
