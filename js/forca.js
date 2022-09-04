@@ -1,4 +1,7 @@
-const palavras = [
+let secretWordCategory;
+let secretWordDrawn;
+
+const words = [
     palavra001 = {
         nome: "IRLANDA",
         categoria:"LUGARES"
@@ -244,3 +247,15 @@ const palavras = [
         categoria:"TV E CINEMA"
     }
 ];
+
+function secretWord(){
+    const indexWord = parseInt(Math.random() * words.length);
+
+    secretWordDrawn = words[indexWord].nome;
+    secretWordCategory = words[indexWord].categoria;
+    console.log(secretWordDrawn);
+    console.log(secretWordCategory);
+}
+
+secretWord();
+
