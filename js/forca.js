@@ -248,7 +248,7 @@ const words = [
     }
 ];
 
-function secretWord(){
+const secretWord = () => {
     const indexWord = parseInt(Math.random() * words.length);
 
     secretWordDrawn = words[indexWord].nome;
@@ -257,5 +257,14 @@ function secretWord(){
     console.log(secretWordCategory);
 }
 
-secretWord();
+const wordOnScreen = () => {
+    secretWord();
+    const categoria = document.getElementById("category");
+    categoria.innerHTML = secretWordCategory;
+    const palavra = document.getElementById("word");
+    palavra.innerHTML = "";
+}
+
+wordOnScreen();
+
 
