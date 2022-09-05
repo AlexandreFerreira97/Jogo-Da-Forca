@@ -298,7 +298,7 @@ function compareLists (letra) {
         attempts--;
         loadImage();
         if(attempts === 0) {
-            modalOpen();
+            modalOpen("OPS!", "Perdeu, a palavra era: " + secretWordDrawn);
         }
     }
     else{
@@ -342,7 +342,12 @@ function loadImage(){
     }
 }
 
-function modalOpen(){
+function modalOpen(title, message){
+    let modalTitle = document.getElementById("exampleModalLabel");
+    modalTitle.innerText = title;
+
+    let modalBody = document.getElementById("modalBody");
+    modalBody.innerHTML = message;
     $("#myModal").modal({
         show:true
     });
