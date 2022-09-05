@@ -250,7 +250,8 @@ const words = [
     }
 ];
 
-const secretWord = () => {
+secretWord();
+function secretWord () {
     const indexWord = parseInt(Math.random() * words.length);
 
     secretWordDrawn = words[indexWord].nome;
@@ -259,8 +260,8 @@ const secretWord = () => {
     console.log(secretWordCategory);
 }
 
-const wordOnScreen = () => {
-    secretWord();
+wordOnScreen();
+function wordOnScreen () {
     const categoria = document.getElementById("category");
     categoria.innerHTML = secretWordCategory;
     const palavra = document.getElementById("word");
@@ -277,22 +278,23 @@ const wordOnScreen = () => {
     }
 }
 
-const chosenLetter = (letra) => {
+function chosenLetter (letra){
     if(attempts > 0){
         changeFontStyle(letra + '-key');
         compareLists(letra);
+        wordOnScreen ();
     }
 }
 
-const changeFontStyle = (tecla) =>{
+function changeFontStyle (tecla) {
     document.getElementById(tecla).style.background = '#C71585';
     document.getElementById(tecla).style.color = 'white';
 }
 
-const compareLists = (letra) => {
+function compareLists (letra) {
     const position = secretWordDrawn.indexOf(letra);
     if (position < 0){
-        tentativas--;
+        attempts--;
     }
     else{
         for(i = 0; i < secretWordDrawn.length; i++){
@@ -301,8 +303,19 @@ const compareLists = (letra) => {
             }
         }
     }
+
+    let win = true;
+    for(i = 0; i < secretWordDrawn.length; i++){
+        if(secretWordDrawn[i] != dinamicList){
+            win = false;
+        }
+    }
+
+    if(win === true)
+    {
+        attempts = 0;
+    }
 }
 
-wordOnScreen();
 
 
