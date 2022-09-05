@@ -295,15 +295,22 @@ function wordOnScreen () {
 function chosenLetter (letra){
     document.getElementById(letra + '-key').disabled = true;
     if(attempts > 0){
-        changeFontStyle(letra + '-key');
+        changeFontStyle(letra + '-key',false);
         compareLists(letra);
         wordOnScreen ();
     }
 }
 
-function changeFontStyle (tecla) {
-    document.getElementById(tecla).style.background = '#C71585';
-    document.getElementById(tecla).style.color = 'white';
+function changeFontStyle (tecla, condicao) {
+
+    if(condicao === false){
+        document.getElementById(tecla).style.background = '#C71585';
+        document.getElementById(tecla).style.color = 'white';
+    }
+    else{
+        document.getElementById(tecla).style.background = 'green';
+        document.getElementById(tecla).style.color = 'white';
+    }
 }
 
 function compareLists (letra) {
