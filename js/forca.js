@@ -269,11 +269,25 @@ function wordOnScreen () {
 
     for(i = 0; i < secretWordDrawn.length;i++){
         if(dinamicList[i] === undefined){
-            dinamicList[i] = "&nbsp";
-            palavra.innerHTML = palavra.innerHTML +  '<div class="letters">' + dinamicList[i] + '</div>';
+
+            if(secretWordDrawn[i] === ' '){
+                dinamicList[i] = ' ';
+                palavra.innerHTML = palavra.innerHTML +  '<div class="lettersSpace">' + dinamicList[i] + '</div>';
+            }
+            else{
+                dinamicList[i] = "&nbsp";
+                palavra.innerHTML = palavra.innerHTML +  '<div class="letters">' + dinamicList[i] + '</div>';
+            }
         }
         else{
-            palavra.innerHTML = palavra.innerHTML +  '<div class="letters">' + dinamicList[i] + '</div>';
+
+            if(secretWordDrawn[i] === ' '){
+                dinamicList[i] = ' ';
+                palavra.innerHTML = palavra.innerHTML +  '<div class="lettersSpace">' + dinamicList[i] + '</div>';
+            }
+            else{
+                palavra.innerHTML = palavra.innerHTML +  '<div class="letters">' + dinamicList[i] + '</div>';
+            }
         }
     }
 }
@@ -318,7 +332,7 @@ function compareLists (letra) {
         }
     }
 
-    if(win == true)
+    if(win === true)
     {
         modalOpen("Nice", "Parabéns, você venceu!!");
         attempts = 0;
@@ -356,3 +370,8 @@ function modalOpen(title, message){
     });
 }
 
+let btnReset = document.querySelector('#reset');
+
+btnReset.addEventListener('click', () => {
+    location.reload();
+});
