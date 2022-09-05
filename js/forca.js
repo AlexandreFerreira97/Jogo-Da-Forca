@@ -302,6 +302,7 @@ function compareLists (letra) {
         }
     }
     else{
+        changeFontStyle(letra + '-key', true);
         for(i = 0; i < secretWordDrawn.length; i++){
             if(secretWordDrawn[i] === letra){
                 dinamicList[i] = letra;
@@ -310,14 +311,16 @@ function compareLists (letra) {
     }
 
     let win = true;
+
     for(i = 0; i < secretWordDrawn.length; i++){
-        if(secretWordDrawn[i] != dinamicList){
+        if(secretWordDrawn[i] != dinamicList[i]){
             win = false;
         }
     }
 
-    if(win === true)
+    if(win == true)
     {
+        modalOpen("Nice", "Parabéns, você venceu!!");
         attempts = 0;
     }
 }
