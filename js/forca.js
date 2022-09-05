@@ -279,6 +279,7 @@ function wordOnScreen () {
 }
 
 function chosenLetter (letra){
+    document.getElementById(letra + '-key').disabled = true;
     if(attempts > 0){
         changeFontStyle(letra + '-key');
         compareLists(letra);
