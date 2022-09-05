@@ -49,6 +49,15 @@ body{
     margin-right: 2px;
 }
 
+.lettersSpace{
+    width: 16px;
+    text-align: center;
+    color: white;
+    padding: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
 #keyboard{
     margin: 10px;
 }
