@@ -295,7 +295,11 @@ const compareLists = (letra) => {
         tentativas--;
     }
     else{
-        for(i = 0;)
+        for(i = 0; i < secretWordDrawn.length; i++){
+            if(secretWordDrawn[i] === letra){
+                dinamicList[i] = letra;
+            }
+        }
     }
 }
 
