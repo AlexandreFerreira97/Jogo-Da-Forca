@@ -297,6 +297,9 @@ function compareLists (letra) {
     if (position < 0){
         attempts--;
         loadImage();
+        if(attempts === 0) {
+            modalOpen();
+        }
     }
     else{
         for(i = 0; i < secretWordDrawn.length; i++){
@@ -337,5 +340,11 @@ function loadImage(){
         break;
 
     }
+}
+
+function modalOpen(){
+    $("#myModal").modal({
+        show:true
+    });
 }
 
