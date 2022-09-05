@@ -295,6 +295,7 @@ function compareLists (letra) {
     const position = secretWordDrawn.indexOf(letra);
     if (position < 0){
         attempts--;
+        loadImage();
     }
     else{
         for(i = 0; i < secretWordDrawn.length; i++){
@@ -317,5 +318,23 @@ function compareLists (letra) {
     }
 }
 
+function loadImage(){
+    switch(attempts){
+        case 5: document.getElementById('image').style.background = "url('./imgs/forca01.png')";
+        break;
+        case 4: document.getElementById('image').style.background = "url('./imgs/forca02.png')";
+        break;
+        case 3: document.getElementById('image').style.background = "url('./imgs/forca03.png')";
+        break;
+        case 2: document.getElementById('image').style.background = "url('./imgs/forca04.png')";
+        break;
+        case 1: document.getElementById('image').style.background = "url('./imgs/forca05.png')";
+        break;
+        case 0: document.getElementById('image').style.background = "url('./imgs/forca06.png')";
+        break;
+        default: document.getElementById('image').style.background = "url('./imgs/forca.png')";
+        break;
 
+    }
+}
 
