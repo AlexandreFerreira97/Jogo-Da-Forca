@@ -1,3 +1,4 @@
+let attempts = 6;
 let dinamicList = [];
 let secretWordCategory;
 let secretWordDrawn;
@@ -273,6 +274,28 @@ const wordOnScreen = () => {
         else{
             palavra.innerHTML = palavra.innerHTML +  '<div class="letters">' + dinamicList[i] + '</div>';
         }
+    }
+}
+
+const chosenLetter = (letra) => {
+    if(attempts > 0){
+        changeFontStyle(letra + '-key');
+        compareLists(letra);
+    }
+}
+
+const changeFontStyle = (tecla) =>{
+    document.getElementById(tecla).style.background = '#C71585';
+    document.getElementById(tecla).style.color = 'white';
+}
+
+const compareLists = (letra) => {
+    const position = secretWordDrawn.indexOf(letra);
+    if (position < 0){
+        tentativas--;
+    }
+    else{
+        for(i = 0;)
     }
 }
 
